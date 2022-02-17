@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".LoginActivity">
+    tools:context=".RegistrationActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/loginToolbar"
+        android:id="@+id/RegistrationToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000"
@@ -25,7 +25,7 @@
         android:layout_gravity="center"/>
 
     <EditText
-        android:id="@+id/loginEmail"
+        android:id="@+id/RegistrationEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Email.."
@@ -37,12 +37,12 @@
         android:inputType="textEmailAddress"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-<!--        android:background="@drawable/inputs"-->
-<!--    android:drawableStart="@drawable/ic_email_black_24dp"-->
+    <!--        android:background="@drawable/inputs"-->
+    <!--    android:drawableStart="@drawable/ic_email_black_24dp"-->
 
 
     <EditText
-        android:id="@+id/loginPassword"
+        android:id="@+id/RegistrationPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter password..."
@@ -52,14 +52,14 @@
         android:inputType="textPassword"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-<!--    android:background="@drawable/inputs"-->
-<!--    android:drawableStart="@drawable/ic_lock"-->
+    <!--    android:background="@drawable/inputs"-->
+    <!--    android:drawableStart="@drawable/ic_lock"-->
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/RegistrationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Register"
         android:textAllCaps="false"
         android:layout_margin="10dp"
         android:textColor="#000"
