@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MAPD_BookTracker_A00236910">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
