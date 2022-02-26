@@ -6,7 +6,7 @@ public class Model {
 
     public Model() {
     }
-
+// data model class to specify data model to be store in the firebase cloud after successful addition
     public Model(String task, String description, String id, String date) {
         this.task = task;
         this.description = description;

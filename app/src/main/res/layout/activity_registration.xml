@@ -16,14 +16,14 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
-
+<!--image view for registration activity layout-->
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/ic_launcher_background"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"/>
-
+<!--Enter email edit text field-->
     <EditText
         android:id="@+id/RegistrationEmail"
         android:layout_width="match_parent"
@@ -37,10 +37,9 @@
         android:inputType="textEmailAddress"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-    <!--        android:background="@drawable/inputs"-->
-    <!--    android:drawableStart="@drawable/ic_email_black_24dp"-->
 
 
+<!--enter password edit text field-->
     <EditText
         android:id="@+id/RegistrationPassword"
         android:layout_width="match_parent"
@@ -52,8 +51,8 @@
         android:inputType="textPassword"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-    <!--    android:background="@drawable/inputs"-->
-    <!--    android:drawableStart="@drawable/ic_lock"-->
+
+<!--    Register button-->
 
     <Button
         android:id="@+id/RegistrationButton"

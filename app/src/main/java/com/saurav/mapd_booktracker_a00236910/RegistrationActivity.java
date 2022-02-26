@@ -37,19 +37,22 @@ public class RegistrationActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_registration);
 
-        toolbar = findViewById(R.id.RegistrationToolbar);
+//        toolbar = findViewById(R.id.RegistrationToolbar);
 //        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Registration");
+
+//        firebase instance initiation
 
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
 
-
+//accessing registration view items
         RegEmail = findViewById(R.id.RegistrationEmail);
         RegPwd = findViewById(R.id.RegistrationPassword);
         RegBtn = findViewById(R.id.RegistrationButton);
         RegnQn = findViewById(R.id.RegistrationPageQuestion);
 
+//        on click listener to access the registration question
         RegnQn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +60,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        on click listener to add action to register button in order to fetch the user details and store it on the cloud
 
         RegBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,12 +85,14 @@ public class RegistrationActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (task.isSuccessful()){
+//                                intent to move to home screen after successful registration
                                 Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();
                             }else {
                                 String error = task.getException().toString();
+//                                toast message in case the registration fails
                                 Toast.makeText(RegistrationActivity.this, "Registration failed" + error, Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             }

@@ -1,10 +1,14 @@
-plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'
-}
+//plugins {
+//    id 'com.android.application'
+//    id 'com.google.gms.google-services'
+//}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 31
+//    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.saurav.mapd_booktracker_a00236910"

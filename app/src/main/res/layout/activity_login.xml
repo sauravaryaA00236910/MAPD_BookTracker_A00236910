@@ -17,12 +17,16 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
 
+<!--    login page image view-->
+
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/ic_launcher_background"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"/>
+
+<!--    login edit text field to enter email id-->
 
     <EditText
         android:id="@+id/loginEmail"
@@ -37,10 +41,8 @@
         android:inputType="textEmailAddress"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-<!--        android:background="@drawable/inputs"-->
-<!--    android:drawableStart="@drawable/ic_email_black_24dp"-->
 
-
+<!--login edit text field to enter passwrod of the user-->
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="match_parent"
@@ -52,9 +54,8 @@
         android:inputType="textPassword"
         android:drawablePadding="10dp"
         android:padding="10dp"/>
-<!--    android:background="@drawable/inputs"-->
-<!--    android:drawableStart="@drawable/ic_lock"-->
 
+<!--login button-->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
@@ -66,6 +67,7 @@
         android:textSize="20sp"
         android:background="#fff"/>
 
+<!--    Registration access if user doesn't have account-->
     <TextView
         android:id="@+id/loginPageQuestion"
         android:layout_width="match_parent"

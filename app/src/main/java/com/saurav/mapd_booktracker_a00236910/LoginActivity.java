@@ -37,8 +37,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-
+//firebase auth initiation
         mAuth = FirebaseAuth.getInstance();
+
+//        getting current user and navigating to home screen
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -52,17 +54,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        toolbar = findViewById(R.id.loginToolbar);
+//        toolbar = findViewById(R.id.loginToolbar);
 //        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Login");
         loader = new ProgressDialog(this);
 
 
-
+//accessing login layout view fields
         loginEmail = findViewById(R.id.loginEmail);
         loginPwd = findViewById(R.id.loginPassword);
         loginBtn = findViewById(R.id.loginButton);
         loginQn = findViewById(R.id.loginPageQuestion);
+
+//        register question on click listener andnavigation from login screen to registration screen
 
         loginQn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        Login button on click listener to authenticate user and login to home screen
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

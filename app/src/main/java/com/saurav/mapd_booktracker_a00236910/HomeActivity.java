@@ -61,10 +61,13 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
 
+//        home activity view field access
         toolbar = findViewById(R.id.homeToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Book Tracker App");
         mAuth = FirebaseAuth.getInstance();
+
+//        recycler view layout binding
 
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -80,6 +83,7 @@ public class HomeActivity extends AppCompatActivity {
         onlineUserID = mUser.getUid();
         reference = FirebaseDatabase.getInstance().getReference().child("tasks").child(onlineUserID);
 
+//        onclick listener on add floating action button
         floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,9 +93,12 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+//    addTask function to add book along with its description
     private void addTask() {
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
+
+//        input file layout inflation
 
         View myView = inflater.inflate(R.layout.input_file, null);
         myDialog.setView(myView);
@@ -99,10 +106,14 @@ public class HomeActivity extends AppCompatActivity {
         final AlertDialog dialog = myDialog.create();
         dialog.setCancelable(false);
 
+//        access to add book view fields
+
         final EditText task = myView.findViewById(R.id.task);
         final EditText description = myView.findViewById(R.id.description);
         Button save = myView.findViewById(R.id.saveBtn);
         Button cancel = myView.findViewById(R.id.CancelBtn);
+
+//        cancel button on click listener
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +122,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+//        save button on click listener to save book name and description
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +131,6 @@ public class HomeActivity extends AppCompatActivity {
                 String mDescription = description.getText().toString().trim();
                 String id = reference.push().getKey();
                 String date = DateFormat.getDateInstance().format(new Date());
-
 
                 if (TextUtils.isEmpty(mTask)) {
                     task.setError("Task Required");
@@ -132,6 +144,7 @@ public class HomeActivity extends AppCompatActivity {
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
+//                    accessing model to store data fields on save
                     Model model = new Model(mTask, mDescription, id, date);
                     reference.child(id).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -140,6 +153,7 @@ public class HomeActivity extends AppCompatActivity {
                                 Toast.makeText(HomeActivity.this, "Task has been inserted successfully", Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             } else {
+//                                error and exception handling
                                 String error = task.getException().toString();
                                 Toast.makeText(HomeActivity.this, "Failed: " + error, Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
@@ -220,6 +234,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+//    update saved books function
     private void updateTask() {
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -240,6 +255,7 @@ public class HomeActivity extends AppCompatActivity {
         Button delButton = view.findViewById(R.id.btnDelete);
         Button updateButton = view.findViewById(R.id.btnUpdate);
 
+//        update button on click listener
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

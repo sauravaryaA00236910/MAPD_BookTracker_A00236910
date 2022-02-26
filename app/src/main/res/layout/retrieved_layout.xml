@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+<!--home screen retrieved layout from cloud database-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
-
+<!--Retrieved data date text title-->
             <TextView
                 android:id="@+id/dateTv"
                 android:layout_width="200dp"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
+<!--Book name text title-->
             <TextView
                 android:id="@+id/taskTv"
                 android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:padding="5dp"
                 android:maxLines="1"
                 android:textColor="#000"/>
-
+<!--Book description text title-->
             <TextView
                 android:id="@+id/descriptionTv"
                 android:layout_width="match_parent"
